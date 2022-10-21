@@ -141,11 +141,11 @@ class HandEyeConnector(object):
 
         # interactive
         if self.interactive:
-            i = raw_input('Hit [enter] to accept this latest sample, or `d` to discard: ')
+            i = input('Hit [enter] to accept this latest sample, or `d` to discard: ')
             if i == 'd':
                 del self.hand_world_samples.transforms[-1]
                 del self.camera_marker_samples.transforms[-1]
                 self.compute_calibration(msg)
-            raw_input('Hit [enter] to capture the next sample...')
+            input('Hit [enter] to capture the next sample...')
         else:
             self.rate.sleep()
